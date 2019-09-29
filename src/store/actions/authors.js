@@ -1,4 +1,5 @@
 import * as actionTypes from "./actionTypes";
+import { FETCH_AUTHORS } from "./actionTypes";
 
 import axios from "axios";
 
@@ -10,7 +11,7 @@ export const fetchAuthors = () => {
   return async dispatch => {
     const res = await instance.get("/api/authors/");
     const authors = res.data;
-    dispatch({ type: actionTypes.FETCH_AUTHORS, payload: authors });
+    dispatch({ type: FETCH_AUTHORS, payload: authors });
   };
 };
 
